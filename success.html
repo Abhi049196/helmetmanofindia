@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1e90ff;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        #timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6347;
+        }
+    </style>
+    <script>
+        // Function to redirect to the index.html page
+        function redirectToIndex() {
+            // Redirect to the index.html page
+            window.location.href = 'index.html';
+        }
+
+        // Function to update the countdown timer
+        function updateTimer() {
+            var timerElement = document.getElementById('timer');
+            var count = 5; // Countdown duration in seconds
+
+            var timer = setInterval(function() {
+                count--;
+                timerElement.textContent = count;
+
+                if (count <= 0) {
+                    clearInterval(timer);
+                    redirectToIndex();
+                }
+            }, 1000); // Update the timer every second
+        }
+
+        // Call the function to update the timer on page load
+        window.onload = updateTimer;
+    </script>
+</head>
+<body>
+    <h1>Contact Form Submitted Successfully!</h1>
+    <p>Thank you for reaching out to us. We have received your message and will get back to you as soon as possible.</p>    
+    <p>Don't press any click You will be redirected to the Home  page in <span id="timer">5</span> seconds.</p>
+    <p>If you are not redirected, <a href="index.html">click here</a>.</p>
+    
+    <!-- Add additional content if desired -->
+</body>
+</html>
