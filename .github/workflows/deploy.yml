@@ -3,11 +3,10 @@ name: Deploy to Hostinger
 on:
   push:
     branches:
-      - main   # or master
+      - main
 
 jobs:
   ftp-deploy:
-    name: Upload to Hostinger FTP
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +19,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
+          port: 21
           local-dir: ./
-          server-dir: /public_html/
+          server-dir: public_html/
