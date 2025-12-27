@@ -24,4 +24,4 @@ jobs:
           secure: true
           local-dir: ./
           server-dir: public_html/
-          
+
